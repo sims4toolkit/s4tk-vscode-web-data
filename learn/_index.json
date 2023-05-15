@@ -1,0 +1,40 @@
+{
+  "$schema": "../schemas/index.schema.json",
+  "groups": [
+    {
+      "title": "VS Code",
+      "pages": [
+        {
+          "endpoint": "intro-to-vscode",
+          "title": "Intro to VS Code",
+          "updated": "2023-05-15"
+        },
+        {
+          "endpoint": "tips-for-vscode",
+          "title": "Tips for VS Code",
+          "updated": "2023-05-15"
+        },
+        {
+          "endpoint": "vscode-vs-s4s",
+          "title": "VS Code vs. Sims 4 Studio",
+          "updated": "2023-05-15"
+        }
+      ]
+    },
+    {
+      "title": "S4TK Extension",
+      "pages": [
+        {
+          "endpoint": "intro-to-s4tk-extension",
+          "title": "Intro to the S4TK Extension",
+          "updated": "2023-05-15"
+        },
+        {
+          "endpoint": "using-s4tk-config",
+          "title": "Using the S4TK Config",
+          "updated": "2023-05-15"
+        }
+      ]
+    }
+  ]
+}

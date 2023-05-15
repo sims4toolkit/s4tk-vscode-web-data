@@ -1,0 +1,15 @@
+{
+  "$schema": "../schemas/index.schema.json",
+  "groups": [
+    {
+      "title": "Commands",
+      "pages": [
+        {
+          "endpoint": "something",
+          "title": "Something",
+          "updated": "2023-05-14"
+        }
+      ]
+    }
+  ]
+}
