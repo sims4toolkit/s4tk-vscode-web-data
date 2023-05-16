@@ -10,13 +10,13 @@
           "updated": "2023-05-15"
         },
         {
-          "endpoint": "tips-for-vscode",
-          "title": "Tips for VS Code",
+          "endpoint": "s4s-vs-vscode",
+          "title": "Sims 4 Studio vs. VS Code",
           "updated": "2023-05-15"
         },
         {
-          "endpoint": "vscode-vs-s4s",
-          "title": "VS Code vs. Sims 4 Studio",
+          "endpoint": "tips-for-vscode",
+          "title": "Tips for Using VS Code",
           "updated": "2023-05-15"
         }
       ]
