@@ -5,9 +5,9 @@
       "title": "Updates",
       "pages": [
         {
-          "endpoint": "0-1-0-alpha-1",
-          "title": "0.1.0-alpha.1",
-          "updated": "2023-05-14"
+          "endpoint": "1-0-0",
+          "title": "1.0.0",
+          "updated": "2023-05-17"
         }
       ]
     }

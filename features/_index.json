@@ -2,12 +2,82 @@
   "$schema": "../schemas/index.schema.json",
   "groups": [
     {
-      "title": "Commands",
+      "title": "Build Script",
       "pages": [
         {
-          "endpoint": "something",
-          "title": "Something",
-          "updated": "2023-05-14"
+          "endpoint": "how-to-build",
+          "title": "How to Build",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "build-file-types",
+          "title": "Supported File Types",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "build-types",
+          "title": "Types of Builds",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "build-summary",
+          "title": "View Build Summary",
+          "updated": "2023-05-??"
+        }
+      ]
+    },
+    {
+      "title": "Commands & CodeLens",
+      "pages": [
+        {
+          "endpoint": "hashing-commands",
+          "title": "FNV Hashing",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "string-table-commands",
+          "title": "String Tables",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "s4tk-config-commands",
+          "title": "S4TK Config",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "xml-commands",
+          "title": "Tuning & SimData",
+          "updated": "2023-05-??"
+        }
+      ]
+    },
+    {
+      "title": "File Viewers",
+      "pages": [
+        {
+          "endpoint": "package-editor",
+          "title": "Packages",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "string-table-editor",
+          "title": "String Tables",
+          "updated": "2023-05-??"
+        }
+      ]
+    },
+    {
+      "title": "JSON Formats",
+      "pages": [
+        {
+          "endpoint": "string-table-json",
+          "title": "String Tables",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "s4tk-config-json",
+          "title": "S4TK Config",
+          "updated": "2023-05-??"
         }
       ]
     }

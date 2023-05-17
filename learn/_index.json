@@ -7,17 +7,17 @@
         {
           "endpoint": "intro-to-vscode",
           "title": "Intro to VS Code",
-          "updated": "2023-05-15"
+          "updated": "2023-05-16"
         },
         {
           "endpoint": "s4s-vs-vscode",
           "title": "Sims 4 Studio vs. VS Code",
-          "updated": "2023-05-15"
+          "updated": "2023-05-??"
         },
         {
           "endpoint": "tips-for-vscode",
           "title": "Tips for Using VS Code",
-          "updated": "2023-05-15"
+          "updated": "2023-05-??"
         }
       ]
     },
@@ -27,12 +27,27 @@
         {
           "endpoint": "intro-to-s4tk-extension",
           "title": "Intro to the S4TK Extension",
-          "updated": "2023-05-15"
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "sample-s4tk-project",
+          "title": "Sample S4TK Project Setup",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "config-vs-settings",
+          "title": "S4TK Config vs. Settings",
+          "updated": "2023-05-??"
         },
         {
           "endpoint": "using-s4tk-config",
           "title": "Using the S4TK Config",
-          "updated": "2023-05-15"
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "using-s4tk-settings",
+          "title": "Using the S4TK Settings",
+          "updated": "2023-05-??"
         }
       ]
     }
