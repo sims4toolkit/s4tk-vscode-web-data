@@ -59,6 +59,16 @@
     <li>You can use Git for source control and back your code up on GitHub</li>
   </ul>
   <p>
+    Additionally, the S4TK extension handles resource keys for you. You do not
+    have to include them in file names or set them in an index; S4TK will infer
+    the correct type, group, and instance for tuning / SimData from their
+    contents.
+  </p>
+  <p class="footnote">
+    If types, groups, and/or instances cannot be inferred, you can override them
+    with an XML comment.
+  </p>
+  <p>
     The best part is, you don't have to write a single line of code to reap
     these benefits, since the S4TK VS Code extension handles the build script
     for you. All you have to do is edit a JSON file (the S4TK Config) to tell it
@@ -74,13 +84,30 @@
     While Sims 4 Toolkit works great for files related to gameplay (tuning,
     SimData, images, and string tables), it does not support many file types
     related to CC, such as object catalogs, rigs, and ASMs. For these kinds of
-    files, you must use Sims 4 Studio.
+    files, you must use Sims 4 Studio. However, you can include these packages
+    within your S4TK project's source code to merge them into other built
+    packages.
+  </p>
+  <p class="footnote">
+    There are no plans to add support for CC to the S4TK extension, as S4TK
+    itself does not support it either.
   </p>
   <p>
-    You can either keep these packages isolated from your S4TK project and
-    strictly manage them with S4S, or, you can include them in your S4TK
-    project's source code as well. Despite not being able to edit the resources
-    themselves, S4TK is able to merge existing packages, no matter what they
-    contain.
+    Other limitations of the S4TK VS Code extension include its current lack of
+    non-build-related features, such as extracting tuning. For this, you'll
+    either have to use Sims 4 Studio,
+    <span class="windows"
+      ><a href="https://scumbumbomods.com/xml-extractor" target="_blank"
+        >XML Extractor</a
+      >,
+    </span>
+    <a href="https://lot51.cc/tdesc" target="_blank">TDESC Browser</a>, or
+    <a href="https://sims4toolkit.com/#/docs/extraction" target="_blank"
+      >@s4tk/extraction</a
+    >.
+  </p>
+  <p class="footnote">
+    There are plans to add extraction/file generation abilities to the S4TK
+    extension in the future.
   </p>
 </div>
