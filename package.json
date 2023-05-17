@@ -1,0 +1,11 @@
+{
+  "name": "s4tk-vscode-web-data",
+  "description": "The data for https://vscode.sims4toolkit.com.",
+  "author": "frankkulak",
+  "scripts": {
+    "build": "node scripts/build.cjs"
+  },
+  "devDependencies": {
+    "glob": "^10.2.4"
+  }
+}
