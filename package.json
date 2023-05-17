@@ -3,9 +3,11 @@
   "description": "The data for https://vscode.sims4toolkit.com.",
   "author": "frankkulak",
   "scripts": {
-    "build": "node scripts/build.cjs"
+    "build": "node scripts/build.cjs",
+    "clean": "rm -r build/*"
   },
   "devDependencies": {
-    "glob": "^10.2.4"
+    "glob": "^10.2.4",
+    "html-minifier": "^4.0.0"
   }
 }
