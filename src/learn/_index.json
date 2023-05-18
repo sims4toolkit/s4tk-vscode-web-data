@@ -30,19 +30,14 @@
           "updated": "2023-05-17"
         },
         {
-          "endpoint": "config-vs-settings",
-          "title": "S4TK Config vs. Settings",
-          "updated": "2023-05-17"
+          "endpoint": "s4tk-config",
+          "title": "S4TK Config File",
+          "updated": "2023-05-18"
         },
         {
-          "endpoint": "using-s4tk-config",
-          "title": "Using the S4TK Config",
-          "updated": "2023-05-17"
-        },
-        {
-          "endpoint": "using-s4tk-settings",
-          "title": "Using the S4TK Settings",
-          "updated": "2023-05-17"
+          "endpoint": "s4tk-settings",
+          "title": "S4TK Settings",
+          "updated": "2023-05-18"
         }
       ]
     }
