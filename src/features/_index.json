@@ -15,11 +15,6 @@
           "updated": "2023-05-??"
         },
         {
-          "endpoint": "build-types",
-          "title": "Types of Builds",
-          "updated": "2023-05-??"
-        },
-        {
           "endpoint": "build-summary",
           "title": "View Build Summary",
           "updated": "2023-05-??"
@@ -77,6 +72,16 @@
         {
           "endpoint": "s4tk-config-json",
           "title": "S4TK Config",
+          "updated": "2023-05-??"
+        }
+      ]
+    },
+    {
+      "title": "Misc",
+      "pages": [
+        {
+          "endpoint": "s4tk-settings",
+          "title": "S4TK Settings",
           "updated": "2023-05-??"
         }
       ]
