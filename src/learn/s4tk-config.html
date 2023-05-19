@@ -1,0 +1,141 @@
+<p>
+  The S4TK config is a JSON file that marks a workspace folder as an S4TK
+  project. When in the root of your VS Code workspace, it powers the build
+  script without requiring you to write any code of your own.
+</p>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>How to Create the Config</h2>
+  <p>
+    There's no magic to the S4TK config, it's just a JSON file named
+    <code>s4tk.config.json</code>. You can either create this file yourself, or
+    right-click the file explorer and use the "Create S4TK Config" command that
+    appears in the context menu.
+  </p>
+  <p>
+    <span class="font-bold danger">IMPORTANT:</span> The S4TK config
+    <strong>must</strong> be in the root of your VS Code workspace, or the
+    extension will not be able to find it.
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="s4tk-config-command.png"
+      alt="Screenshot of File Explorer Context Menu"
+    />
+    <p class="text-sm text-subtle">
+      Generating S4TK Config From the File Explorer
+    </p>
+  </div>
+  <p>
+    Once you have an S4TK config file, you should see a message popup saying
+    "S4TK Config Successfully Loaded". This is how you know the S4TK extension
+    was able to find your config, and will be able to use it while building.
+  </p>
+  <p class="footnote">
+    You can also silence this popup
+    <a href="#/learn/s4tk-settings">in settings</a>, if you find it annoying.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Editing the Config</h2>
+  <p>
+    You must edit the S4TK config as plain text, as there is no other UI for it.
+    If you're uncomfortable with JSON syntax, the S4TK extension provides full
+    intellisense and validation, so that you can be confident that you are using
+    it correctly.
+  </p>
+  <p class="footnote">
+    If you've used XML for TS4 modding, JSON should not scare you.
+    <a href="https://www.w3schools.com/js/js_json_syntax.asp" target="_blank"
+      >Read more about JSON syntax</a
+    >.
+  </p>
+  <p>
+    "Intellisense" is a fancy word for "the editor tells you what things mean,
+    and suggests possible values." You can hover over anything in the config to
+    see a tooltip that explains what it is for, and when you start typing, you
+    will get suggestions for values to use, such as <code>true</code> /
+    <code>false</code> for booleans, or <code>""</code> for strings.
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="s4tk-config-intellisense.png"
+      alt="Screenshot of S4TK Config with Intellisense"
+    />
+    <p class="text-sm text-subtle">Intellisense in the S4TK Config</p>
+  </div>
+  <p>
+    You'll know that a value you set in the config is of the correct type,
+    because if not, you'll see it underlined in yellow and get an error message
+    when you save the file, as seen below.
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="s4tk-config-error.png"
+      alt="Screenshot of S4TK Config with Validation"
+    />
+    <p class="text-sm text-subtle">Validation in the S4TK Config</p>
+  </div>
+  <p>
+    This validation helps ensure that your config is structured correctly, but
+    does not guarantee that your logic is correct, such as how you set up your
+    glob patterns in <code>buildInstructions</code>. If you don't know what a
+    glob pattern is, that's fine - the next section explains what they are, how
+    you're supposed to use them, and how the S4TK extension helps you get them
+    right.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Notes on Glob Patterns</h2>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="build-error-overlap.png"
+      alt="Screenshot of S4TK Build Failure Error"
+    />
+    <p class="text-sm text-subtle">
+      Build Failing Because of Config Logic Error
+    </p>
+  </div>
+  <p>
+    If you don't know what <code>**/*</code> is, it is called a "glob pattern".
+    Misuse of glob patterns is the most likely cause of logic errors in an S4TK
+    config, but the build process safeguards against these issues for you by
+    default. The next section will explain what glob patterns are, how you
+    should use them, and how the S4TK extension helps you get them right.
+  </p>
+  <p>
+    If you don't know what <code>**/*</code> is, it is called a "glob pattern".
+    Misuse of glob patterns is the most likely cause of logic errors in an S4TK
+    config, but the build process safeguards against these issues for you by
+    default. Using the default <code>buildSettings</code> guarantees that:
+  </p>
+  <ul>
+    <li>
+      Every package's glob patterns match at least one file within source, i.e.
+      no packages will be empty
+    </li>
+    <li>
+      Every file within source is matched by at least one package's glob
+      patterns
+    </li>
+    <li>
+      No files within source is matched by more than one package's glob patterns
+    </li>
+  </ul>
+  <p>
+    This means that every file within your source folder will be written to one
+    and only one package. This is most likely the behavior you want, since
+  </p>
+</div>
