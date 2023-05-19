@@ -32,12 +32,12 @@
         {
           "endpoint": "s4tk-config",
           "title": "S4TK Config File",
-          "updated": "2023-05-18"
+          "updated": "2023-05-19"
         },
         {
           "endpoint": "s4tk-settings",
           "title": "S4TK Settings",
-          "updated": "2023-05-18"
+          "updated": "2023-05-19"
         }
       ]
     }
