@@ -9,7 +9,7 @@ const BUILD_DIR = path.resolve(__dirname, "..", "build");
 function getBuildDestination(srcpath) {
   const outpath = srcpath.replace(SRC_DIR, BUILD_DIR);
   const outdir = path.dirname(outpath);
-  if (!fs.existsSync(outdir)) fs.mkdirSync(outdir);
+  if (!fs.existsSync(outdir)) fs.mkdirSync(outdir, { recursive: true });
   return outpath;
 }
 
