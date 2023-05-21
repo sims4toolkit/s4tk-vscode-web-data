@@ -7,7 +7,7 @@
 <hr />
 
 <div class="paragraphs">
-  <h2>How to Create the Config</h2>
+  <h2>Creating the Config</h2>
   <p>
     There's no magic to the S4TK config, it's just a JSON file named
     <code>s4tk.config.json</code>. You can either create this file yourself, or
@@ -15,7 +15,7 @@
     appears in the context menu.
   </p>
   <p>
-    <span class="font-bold danger">IMPORTANT:</span> The S4TK config
+    <span class="font-bold danger">IMPORTANT!</span> The S4TK config
     <strong>must</strong> be in the root of your VS Code workspace, or the
     extension will not be able to find it.
   </p>
@@ -88,54 +88,79 @@
     This validation helps ensure that your config is structured correctly, but
     does not guarantee that your logic is correct, such as how you set up your
     glob patterns in <code>buildInstructions</code>. If you don't know what a
-    glob pattern is, that's fine - the next section explains what they are, how
-    you're supposed to use them, and how the S4TK extension helps you get them
-    right.
+    glob pattern is, that's fine - all you need to know about them is explained
+    or linked to in the following section.
   </p>
 </div>
 
 <hr />
 
 <div class="paragraphs">
-  <h2>Notes on Glob Patterns</h2>
+  <h2>Setting the Build Instructions</h2>
+
+  <p>
+    The <code>buildInstructions</code> is the most important part of the config,
+    because it is what tells the build script which files to include in which
+    packages. It does this using glob patterns, which find files whose paths
+    have something in common.
+  </p>
+  <p class="footnote">
+    If you're confused about glob patterns, you should read
+    <a href="#/learn/glob-patterns">Glob Patterns</a>.
+  </p>
+  <h4 class="mt-4">Keeping things simple</h4>
+  <p>
+    If you're just building all of your files to one package, then use the
+    default value of <code>**/*</code>. This glob pattern matches every file in
+    any number of subfolders within your source folder, and should suffice for
+    most use cases.
+  </p>
+  <h4 class="mt-4">Building multiple packages</h4>
+  <p>
+    When building multiple packages (such as for pack-dependent features or
+    optional add-ons), you have to write include/exclude glob patterns to
+    specify which source files go to which packages. This can be tricky to get
+    right if you're not familiar with glob patterns, and can be the source of
+    some bugs:
+  </p>
+  <ul>
+    <li>Your patterns might not return any matches (package will be empty)</li>
+    <li>Your patterns might miss some files (mod will be incomplete)</li>
+    <li>Your patterns might have overlap (files will be duplicated)</li>
+  </ul>
+  <p>
+    The good news is, the S4TK extension protects you against all three of these
+    potential bugs by default, which helps ensure that your glob patterns are
+    working the way you intend them to. If any source files are missed or
+    repeated, and if any package's patterns do not have any matches, you will
+    see a fatal build error, like this:
+  </p>
   <div class="feature-img-wrapper">
     <img
       class="feature-img"
       data-src="build-error-overlap.png"
       alt="Screenshot of S4TK Build Failure Error"
     />
-    <p class="text-sm text-subtle">
-      Build Failing Because of Config Logic Error
-    </p>
+    <p class="text-sm text-subtle">Build Failing Because of Glob Overlap</p>
   </div>
   <p>
-    If you don't know what <code>**/*</code> is, it is called a "glob pattern".
-    Misuse of glob patterns is the most likely cause of logic errors in an S4TK
-    config, but the build process safeguards against these issues for you by
-    default. The next section will explain what glob patterns are, how you
-    should use them, and how the S4TK extension helps you get them right.
+    Advanced users with legitimate reasons for doing so may toggle these
+    safeguards off using <code>buildSettings</code>. For instance, if you're
+    intentionally having packages overlap because you're outputting two
+    "flavors" of the same functionality, you can set
+    <code>buildSettings.allowPackageOverlap</code> to <code>true</code>.
   </p>
+</div>
+
+<hr />
+
+<div>
+  <h2>Next Steps</h2>
   <p>
-    If you don't know what <code>**/*</code> is, it is called a "glob pattern".
-    Misuse of glob patterns is the most likely cause of logic errors in an S4TK
-    config, but the build process safeguards against these issues for you by
-    default. Using the default <code>buildSettings</code> guarantees that:
-  </p>
-  <ul>
-    <li>
-      Every package's glob patterns match at least one file within source, i.e.
-      no packages will be empty
-    </li>
-    <li>
-      Every file within source is matched by at least one package's glob
-      patterns
-    </li>
-    <li>
-      No files within source is matched by more than one package's glob patterns
-    </li>
-  </ul>
-  <p>
-    This means that every file within your source folder will be written to one
-    and only one package. This is most likely the behavior you want, since
+    Once you have a basic grasp on the S4TK config, you can get started with the
+    S4TK extension. If you haven't done so already, try out the
+    <a href="#/learn/sample-s4tk-project">Sample S4TK Project</a>, and if you're
+    ready to get started with your own project, check out
+    <a href="#/features">Features</a>.
   </p>
 </div>
