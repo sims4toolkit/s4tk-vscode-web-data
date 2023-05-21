@@ -32,12 +32,22 @@
         {
           "endpoint": "s4tk-config",
           "title": "S4TK Config File",
-          "updated": "2023-05-19"
+          "updated": "2023-05-21"
         },
         {
           "endpoint": "s4tk-settings",
           "title": "S4TK Settings",
           "updated": "2023-05-19"
+        }
+      ]
+    },
+    {
+      "title": "Other",
+      "pages": [
+        {
+          "endpoint": "glob-patterns",
+          "title": "Glob Patterns",
+          "updated": "2023-05-21"
         }
       ]
     }

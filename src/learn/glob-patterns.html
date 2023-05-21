@@ -1,0 +1,90 @@
+<p>
+  Glob patterns are used to find files whose paths have something in common. You
+  can read this
+  <a
+    href="https://www.malikbrowne.com/blog/a-beginners-guide-glob-patterns/"
+    target="_blank"
+    >beginner's guide to glob patterns</a
+  >
+  for a more complete introduction, but for the purposes of the
+  <a href="#/learn/s4tk-config">S4TK Config</a>, all you need to know is that
+  <code>*</code> means "any number of characters in a single file or folder
+  name," and <code>**</code> means "any number of subfolders with any name."
+</p>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Understanding Glob Patterns</h2>
+  <p>
+    The S4TK config makes use of glob patterns to build files into packages, so
+    you need to at least somewhat understand how they work. The best way to
+    understand globs is through examples:
+  </p>
+  <ul>
+    <li><code>**/*</code> &rarr; Every file in every subfolder</li>
+    <li><code>**/*.xml</code> &rarr; Every XML file in every subfolder</li>
+    <li>
+      <code>**/buff_*.xml</code> &rarr; Every XML file that begins with "buff_"
+      in every subfolder
+    </li>
+    <li>
+      <code>example/*.xml</code> &rarr; Every XML file in the "example" folder,
+      but not within any deeper subfolders
+    </li>
+    <li>
+      <code>example/**/*.xml</code> &rarr; Every XML file in the "example"
+      folder, including all of its nested subfolders
+    </li>
+  </ul>
+  <p>
+    Glob patterns can get as granular as you need them to be, but for the
+    purposes of the S4TK config, it's probably easiest to group your files in
+    one subfolder per package, such as:
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="config-glob-example.png"
+      alt="Screenshot of File Explorer and S4TK Config"
+    />
+    <p class="text-sm text-subtle">Sample S4TK Project Structure and Globs</p>
+  </div>
+  <p>
+    This structure and config would produce two packages, where the first
+    contains every file within the <code>core</code> and
+    <code>strings</code> folders, and the second contains everything in
+    <code>some-add-on</code>. You'll notice that the glob patterns are relative
+    to the source folder, <code>src</code>.
+  </p>
+  <p class="footnote">
+    You can achieve these same results by using
+    <code>"include": ["**/*"]</code> and
+    <code>"exclude": ["some-add-on/**/*"]</code> for the first package.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Important Notes</h2>
+  <p>
+    These notes are specific to Node's most popular globbing package,
+    <a href="https://www.npmjs.com/package/glob" target="_blank">glob</a>.
+  </p>
+  <h4 class="mt-4">case-insensitivity</h4>
+  <p>
+    Glob patterns are case-insensitive, meaning that any characters you use in
+    glob patterns will ignore case. For example, <code>buff_*.xml</code> would
+    match both "buff_Example.xml" and "Buff_Example.xml".
+  </p>
+  <h4 class="mt-4">always use forward slashes</h4>
+  <p>
+    This isn't entirely relevant to the S4TK extension since it will normalize
+    your paths for you anyways (i.e. if you use Windows paths, it will convert
+    them for you), but it's good to know that the Node glob package
+    <strong>always uses forward slashes</strong>, regardless of operating
+    system. This means that your globs should look like <code>**/*</code> rather
+    than <code>**\\*</code>, even on Windows.
+  </p>
+</div>
