@@ -5,73 +5,63 @@
       "title": "Build Script",
       "pages": [
         {
-          "endpoint": "how-to-build",
-          "title": "How to Build",
+          "endpoint": "build-config",
+          "title": "Build Customization",
           "updated": "2023-05-??"
         },
         {
-          "endpoint": "build-file-types",
-          "title": "Supported File Types",
-          "updated": "2023-05-??"
-        },
-        {
-          "endpoint": "build-summary",
-          "title": "View Build Summary",
+          "endpoint": "build-running",
+          "title": "Running Builds",
           "updated": "2023-05-??"
         }
       ]
     },
     {
-      "title": "Commands & CodeLens",
+      "title": "File Editors",
       "pages": [
         {
-          "endpoint": "hashing-commands",
-          "title": "FNV Hashing",
+          "endpoint": "editor-package",
+          "title": "Package",
           "updated": "2023-05-??"
         },
         {
-          "endpoint": "string-table-commands",
-          "title": "String Tables",
+          "endpoint": "editor-stbl-binary",
+          "title": "String Table (Binary)",
           "updated": "2023-05-??"
         },
         {
-          "endpoint": "s4tk-config-commands",
+          "endpoint": "editor-stbl-json",
+          "title": "String Table (JSON)",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "editor-s4tk-config",
           "title": "S4TK Config",
           "updated": "2023-05-??"
         },
         {
-          "endpoint": "xml-commands",
+          "endpoint": "editor-xml",
           "title": "Tuning & SimData",
           "updated": "2023-05-??"
         }
       ]
     },
     {
-      "title": "File Viewers",
+      "title": "Other Commands",
       "pages": [
         {
-          "endpoint": "package-editor",
-          "title": "Packages",
+          "endpoint": "commands-hashing",
+          "title": "Hashing Commands",
           "updated": "2023-05-??"
         },
         {
-          "endpoint": "string-table-editor",
-          "title": "String Tables",
-          "updated": "2023-05-??"
-        }
-      ]
-    },
-    {
-      "title": "JSON Formats",
-      "pages": [
-        {
-          "endpoint": "string-table-json",
-          "title": "String Tables",
+          "endpoint": "commands-stbl",
+          "title": "String Table Commands",
           "updated": "2023-05-??"
         },
         {
-          "endpoint": "s4tk-config-json",
-          "title": "S4TK Config",
+          "endpoint": "commands-s4tk-workspace",
+          "title": "S4TK Workspace",
           "updated": "2023-05-??"
         }
       ]
