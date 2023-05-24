@@ -1,8 +1,77 @@
-<p>TODO</p>
+<p>
+  The build script checks for potential warnings and errors before and while the
+  build script is running. If anything is seriously wrong, the build script will
+  terminate with a detailed error message. Whether the build succeeds or not, a
+  file called <code>BuildSummary.json</code> will be output that details how the
+  config was interpreted and which specific files had problems.
+</p>
 
 <hr />
 
 <div class="paragraphs">
-  <h2>TODO</h2>
+  <h2>Pre-Build Validation</h2>
+  <p>Before the build script runs, it verifies some things:</p>
+  <ul>
+    <li>Every package has a non-empty, unique <code>filename</code></li>
+
+    <li>The <code>source</code> leads to an existing directory</li>
+
+    <li>All <code>destinations</code> lead to an existing directory</li>
+    <p class="footnote">
+      Does not apply if <code>allowFolderCreation</code> is true
+    </p>
+
+    <li>No two package's glob patterns match the same files</li>
+    <p class="footnote">
+      Does not apply if <code>allowPackageOverlap</code> is true
+    </p>
+
+    <li>
+      Every source file is captured by at least one package's glob patterns
+    </li>
+    <p class="footnote">
+      Does not apply if <code>allowMissingSourceFiles</code> is true
+    </p>
+
+    <li>Each package's glob patterns match at least one source file</li>
+    <p class="footnote">
+      Does not apply if <code>allowEmptyPackages</code> is true
+    </p>
+  </ul>
+  <p>If building in release mode, some extra checks are done:</p>
+  <ul>
+    <li>The ZIP has a non-empty <code>filename</code></li>
+    <li>
+      If the ZIP's <code>include</code> paths is non-empty, at least one file is
+      matched
+    </li>
+  </ul>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Runtime Validation</h2>
+  <p>While the build script is running, it may terminate with an error if:</p>
+  <ul>
+    <li>
+      Any resources are corrupt or could otherwise not be built into their TS4
+      binary formats (string tables, SimData, etc.)
+    </li>
+    <li>
+      Any tuning/SimData file's resource key could not be determined by TGI file
+      names, S4TK comments, or inference
+    </li>
+  </ul>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Build Summary</h2>
+  <p>
+    The <code>BuildSummary.json</code> file is generated at your project's root
+    and contains information that helps you debug your project and/or config.
+  </p>
   <p>TODO</p>
 </div>
