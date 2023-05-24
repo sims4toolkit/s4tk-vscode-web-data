@@ -10,6 +10,16 @@
           "updated": "2023-05-??"
         },
         {
+          "endpoint": "build-validation",
+          "title": "Build Validation",
+          "updated": "2023-05-??"
+        },
+        {
+          "endpoint": "build-resource-keys",
+          "title": "Resource Keys",
+          "updated": "2023-05-??"
+        },
+        {
           "endpoint": "build-running",
           "title": "Running Builds",
           "updated": "2023-05-??"
