@@ -1,8 +1,184 @@
-<p>TODO</p>
+<p>
+  The build script is fully controlled by the
+  <a href="#/learn/s4tk-config" target="_blank">S4TK Config</a>, in which you
+  decide which files are built to which packages, where the packages are
+  written, and what kind of safeguards / debug information you want to generate.
+  This article explains these individual settings in the config, as well as the
+  different kinds of builds you can run.
+</p>
+<p class="footnote">
+  For more information about the S4TK Config file, click the link above.
+</p>
 
 <hr />
 
 <div class="paragraphs">
-  <h2>TODO</h2>
-  <p>TODO</p>
+  <h2>Types of Builds</h2>
+  <p>There are three types of builds:</p>
+  <ul>
+    <li>
+      <strong>Build</strong>: Builds your source files into packages and writes
+      them to disk.
+    </li>
+    <p class="footnote">
+      Probably what you want to use during normal development.
+    </p>
+
+    <li>
+      <strong>Dry Run</strong>: Runs the build process but does not write the
+      packages to disk.
+    </li>
+    <p class="footnote">
+      This is for debugging your config file by seeing what the build script
+      does without overwriting any existing files.
+    </p>
+
+    <li>
+      <strong>Release</strong>: Runs the build process, generates packages, then
+      ZIPs all of your packages and miscellaneous other files.
+    </li>
+    <p class="footnote">
+      You can include non-package files such as TS4SCRIPTs, READMEs, etc. in
+      your ZIP.
+    </p>
+  </ul>
+  <p>
+    All three build types validate your build and will terminate with a detailed
+    error message if anything is wrong. They also all output a file called
+    <code>BuildSummary.json</code> that details how the config was interpreted,
+    if any source files are missing or ignored, any errors or warnings that were
+    found, etc.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Build Instructions</h2>
+  <p>
+    The <code>buildInstructions</code> section tells the build script 3 things:
+  </p>
+  <ul>
+    <li><code>source</code>: What directory your source files are in.</li>
+    <p class="footnote">
+      Path can either be absolute or relative to the root folder.
+    </p>
+
+    <li>
+      <code>destinations</code>: Which directories your built packages should be
+      written to.
+    </li>
+    <p class="footnote">
+      Paths can either be absolute or relative to the root folder.
+    </p>
+
+    <li>
+      <code>packages</code>: Which source files should be written to which
+      packages.
+    </li>
+    <p class="footnote">
+      Any files that (1) match at least one glob pattern in
+      <code>include</code> and (2) do not match any glob patterns in
+      <code>exclude</code> will be written to a package named
+      <code>filename</code>. Glob patterns are relative to the
+      <code>source</code> folder.
+    </p>
+  </ul>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Build Settings</h2>
+  <p>
+    The <code>buildSettings</code> contains toggles for some safeguards that the
+    S4TK build script enables by default:
+  </p>
+  <ul>
+    <li>
+      <code>allowEmptyPackages</code>: Whether or not a package's glob patterns
+      are allowed to not have any matches.
+    </li>
+    <p class="footnote">
+      Making this <code>true</code> means that some packages might be empty.
+    </p>
+
+    <li>
+      <code>allowFolderCreation</code>: Whether or not the build script is
+      allowed to create folders if a destination does not exist.
+    </li>
+    <p class="footnote">
+      Making this <code>true</code> means you might be creating a folder
+      somewhere you did not intend to if your path was incorrect. It's
+      recommended to do a dry run and check your desitinations before setting
+      this to <code>true</code>.
+    </p>
+
+    <li>
+      <code>allowMissingSourceFolders</code>: Whether or not every single file
+      within your source folder must be written to a package.
+    </li>
+    <p class="footnote">
+      Making this <code>true</code> means some of your source files might not be
+      included in any packages.
+    </p>
+
+    <li>
+      <code>allowPackageOverlap</code>: Whether or not multiple packages are
+      allowed to contain the same source file.
+    </li>
+    <p class="footnote">
+      Making this <code>true</code> means some of your source files might be
+      duplicated.
+    </p>
+
+    <li>
+      <code>outputBuildSummary</code>: What kind build summary to generate
+      (<code>"none"</code>, <code>"partial"</code>, or <code>"full"</code>).
+    </li>
+    <p class="footnote">
+      Partial build summaries only include how the config was interpreted and
+      any warnings or errors the build script ran in to. Full summaries also
+      include a comprehensive list of every source file that was written to
+      every package, including their inferred resource keys.
+    </p>
+  </ul>
+  <p>
+    For most users, all of the "allow" settings should be false. Read more about
+    the <a href="#/learn/s4tk-config" target="_blank">S4TK Config</a> to
+    understand how these settings protect you against common bugs with glob
+    patterns.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Release Settings</h2>
+  <p>
+    The <code>releaseSettings</code> contains settings specific to builds made
+    in release mode:
+  </p>
+  <ul>
+    <li><code>filename</code>: The name of the generated ZIP file.</li>
+    <p class="footnote">
+      If the name does not end in <code>.zip</code>, it will automatically be
+      appended.
+    </p>
+
+    <li>
+      <code>internalFolder</code>: What to name the folder within the ZIP, if
+      anything.
+    </li>
+    <p class="footnote">
+      If left null or empty, then there will be no internal folder - files will
+      be written directly to the ZIP.
+    </p>
+
+    <li>
+      <code>otherFiles</code>: List of other files to include in the ZIP, such
+      as TS4SCRIPTs or READMEs.
+    </li>
+    <p class="footnote">List of glob patterns relative to the project root.</p>
+  </ul>
 </div>
