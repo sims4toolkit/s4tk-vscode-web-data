@@ -1,13 +1,8 @@
 <p>
-  The build script is fully controlled by the
-  <a href="#/learn/s4tk-config" target="_blank">S4TK Config</a>, in which you
-  decide which files are built to which packages, where the packages are
-  written, and what kind of safeguards / debug information you want to generate.
-  This article explains these individual settings in the config, as well as the
-  different kinds of builds you can run.
-</p>
-<p class="footnote">
-  For more information about the S4TK Config file, click the link above.
+  The build script is controlled by the
+  <a href="#/learn/s4tk-config" target="_blank">S4TK Config</a>, which specifies
+  the files that are built to each package, where the packages are written, and
+  what kind of debug information to generate.
 </p>
 
 <hr />
@@ -17,7 +12,7 @@
   <p>There are three types of builds:</p>
   <ul>
     <li>
-      <strong>Build</strong>: Builds your source files into packages and writes
+      <strong>Build</strong>: Build your source files into packages and write
       them to disk.
     </li>
     <p class="footnote">
@@ -25,29 +20,28 @@
     </p>
 
     <li>
-      <strong>Dry Run</strong>: Runs the build process but does not write the
-      packages to disk.
+      <strong>Dry Run</strong>: Run the build process and generate debug info,
+      but don't write to disk.
     </li>
     <p class="footnote">
-      This is for debugging your config file by seeing what the build script
-      does without overwriting any existing files.
+      Useful for debugging the config file without overwriting any existing
+      files.
     </p>
 
     <li>
-      <strong>Release</strong>: Runs the build process, generates packages, then
-      ZIPs all of your packages and miscellaneous other files.
+      <strong>Release</strong>: Run a normal built, but write all packages and
+      other files into a ZIP.
     </li>
     <p class="footnote">
-      You can include non-package files such as TS4SCRIPTs, READMEs, etc. in
-      your ZIP.
+      Useful for bundling your package(s) with your scripts, READMEs, etc.
     </p>
   </ul>
   <p>
-    All three build types validate your build and will terminate with a detailed
-    error message if anything is wrong. They also all output a file called
-    <code>BuildSummary.json</code> that details how the config was interpreted,
-    if any source files are missing or ignored, any errors or warnings that were
-    found, etc.
+    All three kinds of builds will fail with a detailed error message if
+    something in your project isn't right, such as a tuning file whose type
+    cannot be inferred. They also output a file called
+    <code>BuildSummary.json</code> that details what went on during the build
+    process (useful for debugging / confirmation).
   </p>
 </div>
 
@@ -55,9 +49,7 @@
 
 <div class="paragraphs">
   <h2>Build Instructions</h2>
-  <p>
-    The <code>buildInstructions</code> section tells the build script 3 things:
-  </p>
+  <p>The <code>buildInstructions</code> section specifies three things:</p>
   <ul>
     <li><code>source</code>: What directory your source files are in.</li>
     <p class="footnote">
@@ -84,6 +76,10 @@
       <code>source</code> folder.
     </p>
   </ul>
+  <p>
+    For more information about globbing, check out the
+    <a href="#/learn/glob-patterns" target="_blank">Glob Patterns</a> article.
+  </p>
 </div>
 
 <hr />
@@ -91,8 +87,7 @@
 <div class="paragraphs">
   <h2>Build Settings</h2>
   <p>
-    The <code>buildSettings</code> contains toggles for some safeguards that the
-    S4TK build script enables by default:
+    The <code>buildSettings</code> section controls safeguards and debug info:
   </p>
   <ul>
     <li>
@@ -156,8 +151,8 @@
 <div class="paragraphs">
   <h2>Release Settings</h2>
   <p>
-    The <code>releaseSettings</code> contains settings specific to builds made
-    in release mode:
+    The <code>releaseSettings</code> section specifies your ZIPs made for
+    release:
   </p>
   <ul>
     <li><code>filename</code>: The name of the generated ZIP file.</li>
@@ -177,7 +172,7 @@
 
     <li>
       <code>otherFiles</code>: List of other files to include in the ZIP, such
-      as TS4SCRIPTs or READMEs.
+      as scripts or READMEs.
     </li>
     <p class="footnote">List of glob patterns relative to the project root.</p>
   </ul>
