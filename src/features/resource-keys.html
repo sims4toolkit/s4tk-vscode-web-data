@@ -112,28 +112,24 @@
   <p>
     For XML resources like tuning and SimData, you can use a special comment at
     the top of the file to tell S4TK which type, group, and instance to use,
-    rather than inferring them. This comment looks like:
+    rather than inferring them. You can generate this comment by clicking the
+    Type / Group / Instance buttons that appear at the top of tuning / SimData
+    files, and delete it by simply removing the comment from the XML.
   </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="xml-key-comment.png"
+      alt="Screenshot of S4TK Key Override Comment"
+    />
+    <p class="text-sm text-subtle">
+      Key Override CodeLenses (Top) and Comment (Bottom)
+    </p>
+  </div>
   <p>
-    <code
-      >&lt;!-- S4TK Type: 12345678, Group: 00000000, Instance: 1234567890ABCDEF
-      --&gt;</code
-    >
-  </p>
-  <p>It is important that:</p>
-  <ul>
-    <li>The comment begins with "S4TK"</li>
-    <li>
-      "Type", "Group", and/or "Instance" are spelled correctly and followed by
-      ":"
-    </li>
-    <li>Type/Group are 8-digit hex, and Instance is 16-digit hex</li>
-  </ul>
-  <p>
-    The comment is <strong>not</strong> case sensitive, so you can use lowercase
-    hex strings as well if you prefer. You can generate this comment by clicking
-    the Type / Group / Instance buttons that appear at the top of tuning /
-    SimData files, and delete it by simply removing the comment from the XML.
+    You do not have to override all 3. If you only need to set the group, then
+    click the "Group" CodeLens button and enter your group manually. The type
+    and instance will still be inferred.
   </p>
 </div>
 
