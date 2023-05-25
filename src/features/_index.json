@@ -17,12 +17,12 @@
         {
           "endpoint": "resource-keys",
           "title": "Resource Keys",
-          "updated": "2023-05-??"
+          "updated": "2023-05-25"
         },
         {
           "endpoint": "running-builds",
           "title": "Running Builds",
-          "updated": "2023-05-??"
+          "updated": "2023-05-25"
         }
       ]
     },
