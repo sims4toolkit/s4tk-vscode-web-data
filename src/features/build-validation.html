@@ -1,16 +1,17 @@
 <p>
-  The build script checks for potential warnings and errors before and while the
-  build script is running. If anything is seriously wrong, the build script will
-  terminate with a detailed error message. Whether the build succeeds or not, a
-  file called <code>BuildSummary.json</code> will be output that details how the
-  config was interpreted and which specific files had problems.
+  The build script checks for issues before and while it is running. If anything
+  is critically wrong (such as a file whose key cannot be determined), the
+  script will terminate with a detailed error message. Whether the build
+  succeeds or not, a file called
+  <code>BuildSummary.json</code> will be output that details everything the
+  build process did.
 </p>
 
 <hr />
 
 <div class="paragraphs">
   <h2>Pre-Build Validation</h2>
-  <p>Before the build script runs, it verifies some things:</p>
+  <p>Before the build script runs, it verifies that:</p>
   <ul>
     <li>Every package has a non-empty, unique <code>filename</code></li>
 
@@ -38,12 +39,13 @@
       Does not apply if <code>allowEmptyPackages</code> is true
     </p>
   </ul>
-  <p>If building in release mode, some extra checks are done:</p>
+
+  <p>If building in release mode, it also verifies that:</p>
   <ul>
     <li>The ZIP has a non-empty <code>filename</code></li>
     <li>
-      If the ZIP's <code>include</code> paths is non-empty, at least one file is
-      matched
+      The ZIP's <code>otherFiles</code> has at least one match if the
+      <code>include</code> list is non-empty
     </li>
   </ul>
 </div>
@@ -52,15 +54,16 @@
 
 <div class="paragraphs">
   <h2>Runtime Validation</h2>
-  <p>While the build script is running, it may terminate with an error if:</p>
+  <p>
+    For each individual file that the build script processes, it checks that:
+  </p>
   <ul>
     <li>
-      Any resources are corrupt or could otherwise not be built into their TS4
-      binary formats (string tables, SimData, etc.)
+      It is not corrupt and can be serialized to its binary format (if
+      applicable)
     </li>
     <li>
-      Any tuning/SimData file's resource key could not be determined by TGI file
-      names, S4TK comments, or inference
+      It has a resource key specified by file name, comments, or inference
     </li>
   </ul>
 </div>
@@ -70,8 +73,11 @@
 <div class="paragraphs">
   <h2>Build Summary</h2>
   <p>
-    The <code>BuildSummary.json</code> file is generated at your project's root
-    and contains information that helps you debug your project and/or config.
+    If any of the checks in the previous sections fail, a detailed error message
+    will be displayed as a VS Code error message popup, and the
+    <code>BuildSummary.json</code> file (generated in your project root) will
+    show you exactly which file it failed on. The build summary has
+    intellisense, so if you don't understand something in it, hover your cursor
+    over it and a tooltip will appear.
   </p>
-  <p>TODO</p>
 </div>
