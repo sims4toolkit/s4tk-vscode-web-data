@@ -1,0 +1,69 @@
+<p>
+  You can create string tables, configs, and sample projects quickly with
+  commands.
+</p>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Command Palette</h2>
+  <p>
+    To open the command palette, press
+    <mark class="keystroke"
+      ><span class="macos">⌘ CMD</span><span class="windows">CTRL</span></mark
+    >&nbsp;<mark class="keystroke"><span class="macos">⇧&nbsp;</span>SHIFT</mark
+    >&nbsp;<mark class="keystroke">P</mark>. Then, you can run commands to
+    create files:
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="create-file-commands.png"
+      alt="Screenshot of Command Palette"
+    />
+    <p class="text-sm text-subtle">Workspace Commands in Command Palette</p>
+  </div>
+  <p>
+    Creating a STBL from the command palette will prompt you for a directory to
+    create it in. The config and sample project will always generate at the root
+    of the current VS Code workspace, since that is where the config must be.
+  </p>
+  <p>
+    These commands are <strong>non-destructive</strong>, meaning they will not
+    overwrite files that already exist. Attempting to create a STBL that exists
+    will open the existing file, while attempting to create a config or sample
+    project will fail.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Context Menus</h2>
+  <p>
+    You can generate the config or sample workspace by right-clicking the root
+    workspace folder and selecting the commands in the context menu. For
+    screenshots and more information, visit
+    <a href="/#/learn/s4tk-config">S4TK Config</a> and
+    <a href="#/learn/sample-s4tk-project">Sample S4TK Project</a>.
+  </p>
+  <p>
+    You can also create a JSON string table with a context menu command, but
+    only when there is an S4TK config file loaded. Right-click on any folder
+    within your workspace in order to create a string table JSON.
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="stbl-json-context-menu.png"
+      alt="Screenshot of Context Menu on a Folder"
+    />
+    <p class="text-sm text-subtle">
+      Context Menu Showing Option to Create STBL JSON
+    </p>
+  </div>
+  <p>
+    The command to create a binary string table is intentionally excluded, as
+    it's not recommended to use them in the first place.
+  </p>
+</div>

@@ -65,13 +65,8 @@
           "updated": "2023-05-25"
         },
         {
-          "endpoint": "commands-stbl",
-          "title": "String Table Commands",
-          "updated": "2023-05-26"
-        },
-        {
-          "endpoint": "commands-workspace",
-          "title": "Workspace Commands",
+          "endpoint": "commands-create-files",
+          "title": "Create File Commands",
           "updated": "2023-05-26"
         }
       ]
