@@ -1,8 +1,6 @@
 <p>
-  Every file within a package has a resource key (type, group, and instance). In
-  S4S, this is manually set in the "Data" tab, but in S4TK, resource keys are
-  automatically inferred from the contents of files. Keys can also be manually
-  set if needed.
+  S4TK infers most resources' keys (type, group, and instance) automatically,
+  but allows them to be manually set if needed.
 </p>
 
 <hr />
@@ -34,11 +32,23 @@
       specified in the JSON
     </li>
   </ul>
-  <p>
-    For most users, it is recommended to use STBL JSONs with metadata, let S4TK
-    infer keys for tuning/SimData (use comments to override only when needed),
-    and leave other kinds of files within packages.
-  </p>
+
+  <p>For most users, it is recommended to:</p>
+  <ul>
+    <li>Let S4TK infer keys for tuning/SimData</li>
+    <p class="footnote">
+      Use comments to override inferred type/group/instance only when needed
+    </p>
+    <li>Use STBL JSONs with metadata rather than binary STBLs</li>
+    <p class="footnote">
+      S4TK's STBL JSON format lets you set the group, locale, and instance base
+    </p>
+    <li>Leave other kinds of files within packages</li>
+    <p class="footnote">
+      You can use TGI file names if you prefer, but they clutter your file
+      explorer
+    </p>
+  </ul>
 </div>
 
 <hr />
@@ -89,7 +99,8 @@
     SimData files always use the SimData type, but there must be a paired tuning
     file in order to infer to group and instance. The group is determined by
     using the paired tuning's type<span class="superscript">*</span>, and the
-    instance is just copied over.
+    instance is just copied over. If the SimData intentionally does not have a
+    paired tuning, you'll have to manually set the group/instance.
   </p>
   <p class="footnote">
     <span class="superscript">*</span> The group is parsed with
@@ -111,7 +122,7 @@
   <h2>Overriding Inference With Comments</h2>
   <p>
     For XML resources like tuning and SimData, you can use a special comment at
-    the top of the file to tell S4TK which type, group, and instance to use,
+    the top of the file to tell S4TK which type, group, and/or instance to use,
     rather than inferring them. You can generate this comment by clicking the
     Type / Group / Instance buttons that appear at the top of tuning / SimData
     files, and delete it by simply removing the comment from the XML.
@@ -163,7 +174,8 @@
   <p>
     Note that SimDatas can either be binary or XML, and string tables can either
     be binary or JSON - the build script will check and serialize them as
-    needed. All other resources will be inserted into the package exactly as-is.
+    needed. All other resources will be inserted into the package exactly as-is,
+    byte for byte.
   </p>
   <p>
     <strong class="danger">NOTE:</strong> Though TGI file names are supported,
@@ -193,8 +205,10 @@
     group, locale, and instance base within the file itself. If using binary
     string tables,
     <strong class="danger">you must use TGI file names</strong>, or else the
-    instance will be a random FNV56 and your default locale will be assumed. The
-    build summary will flag string tables whose instances were generated on the
-    fly for your awareness.
+    instance will be a random FNV56 and your default locale will be assumed.
+  </p>
+  <p class="footnote">
+    The build summary will flag string tables whose instances were generated on
+    the fly for your awareness.
   </p>
 </div>
