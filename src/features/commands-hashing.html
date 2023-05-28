@@ -8,26 +8,31 @@
     >&nbsp;<mark class="keystroke">P</mark>. Then, you can start typing one of
     the following commands:
   </p>
-  <div class="feature-img-wrapper">
-    <img
-      class="feature-img"
-      data-src="hashing-commands.png"
-      alt="Screenshot of Command Palette"
-    />
-    <p class="text-sm text-subtle">Hashing Commands in the Command Palette</p>
-  </div>
+
+  <h4 class="mt-4">Hash specific text</h4>
+  <ul>
+    <li><strong>Hash text with FNV32</strong></li>
+    <li><strong>Hash text with FNV64</strong></li>
+    <li><strong>Hash text with FNV (custom bits)</strong></li>
+  </ul>
+
+  <h4 class="mt-4">Generate random hash</h4>
+  <ul>
+    <li><strong>Generate random FNV32 hash</strong></li>
+    <li><strong>Generate random FNV64 hash</strong></li>
+    <li><strong>Generate random FNV hash (custom bits)</strong></li>
+  </ul>
+  <p class="footnote">
+    Random hashes are generated with a
+    <a href="https://www.npmjs.com/package/uuid" target="_blank">UUID</a>
+    and the current epoch stamp in milliseconds. The chance of a collision is
+    exceedingly rare.
+  </p>
 
   <p>
-    "Hash text with" commands will prompt you for text to hash, while "Generate
-    random" commands will create a cryptographically-safe randomized hash*. All
-    6 of these commands will result in a popup similar to the one below, and you
-    can press any of its buttons to copy it to your clipboard.
-  </p>
-  <p class="footnote">
-    <span class="superscript">*</span> Hashes are generated with a random
-    <a href="https://www.npmjs.com/package/uuid" target="_blank">UUID</a>
-    and the current epoch time in milliseconds. The chance of a collision is
-    exceedingly rare.
+    All six commands will show a popup like the one below; click any of its
+    buttons to copy it to your clipboard. From left to right, the buttons will
+    copy the hash as decimal, hex with a 0x prefix, and hex without a 0x prefix.
   </p>
   <div class="feature-img-wrapper">
     <img
@@ -37,8 +42,4 @@
     />
     <p class="text-sm text-subtle">Message Popup for Copying Hashes</p>
   </div>
-  <p>
-    From left to right, the buttons will copy the hash as decimal, hex with a 0x
-    prefix, and hex without a 0x prefix.
-  </p>
 </div>
