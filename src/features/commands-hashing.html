@@ -1,7 +1,3 @@
-<p>The S4TK extension has built-in commands for FNV hashing.</p>
-
-<hr />
-
 <div class="paragraphs">
   <h2>Command Palette</h2>
   <p>
@@ -20,6 +16,7 @@
     />
     <p class="text-sm text-subtle">Hashing Commands in the Command Palette</p>
   </div>
+
   <p>
     "Hash text with" commands will prompt you for text to hash, while "Generate
     random" commands will create a cryptographically-safe randomized hash*. All
@@ -29,7 +26,8 @@
   <p class="footnote">
     <span class="superscript">*</span> Hashes are generated with a random
     <a href="https://www.npmjs.com/package/uuid" target="_blank">UUID</a>
-    concatenated with the current epoch timestamp, in milliseconds.
+    and the current epoch time in milliseconds. The chance of a collision is
+    exceedingly rare.
   </p>
   <div class="feature-img-wrapper">
     <img
