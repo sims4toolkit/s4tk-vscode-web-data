@@ -37,7 +37,7 @@
         {
           "endpoint": "editor-stbl-binary",
           "title": "String Table (Binary)",
-          "updated": "2023-05-??"
+          "updated": "2023-05-28"
         },
         {
           "endpoint": "editor-stbl-json",

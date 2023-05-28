@@ -1,0 +1,54 @@
+<p>
+  Binary string tables are not directly editable; they are view-only. It is
+  recommended to use
+  <a href="#/features/editor-stbl-json">String Table JSONs</a> in S4TK.
+</p>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>View</h2>
+  <p>
+    The binary string table viewer displays all keys/value pairs in any
+    <code>*.stbl</code> or <code>220557DA*.binary</code> files, and supports
+    using
+    <mark class="keystroke"
+      ><span class="macos">⌘ CMD</span><span class="windows">CTRL</span></mark
+    >&nbsp;<mark class="keystroke">F</mark> to search. It does not, however,
+    have any ability to add, edit, remove, or copy existing strings.
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="binary-stbl-editor.png"
+      alt="Screenshot of Binary STBL Editor"
+    />
+    <p class="text-sm text-subtle">Sample Binary String Table</p>
+  </div>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Commands</h2>
+  <p>
+    In addition to the
+    <a href="#/features/commands-stbl">String Table Commands</a>, binary STBLs
+    have two more at the top of the editor:
+  </p>
+  <ul>
+    <li><strong>Reload</strong>: Refreshes the contents of the editor.</li>
+    <p class="footnote">
+      For use when the STBL changes, such as after using the "Add New String"
+      command.
+    </p>
+    <li>
+      <strong>Convert to JSON</strong>: Creates a JSON string table with the
+      same name and contents as this binary one.
+    </li>
+    <p class="footnote">
+      For use when the STBL changes on disk, such as after using the "Add New
+      String" command.
+    </p>
+  </ul>
+</div>
