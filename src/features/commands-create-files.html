@@ -1,10 +1,3 @@
-<p>
-  You can create string tables, configs, and sample projects quickly with
-  commands.
-</p>
-
-<hr />
-
 <div class="paragraphs">
   <h2>Command Palette</h2>
   <p>
@@ -15,19 +8,26 @@
     >&nbsp;<mark class="keystroke">P</mark>. Then, you can run commands to
     create files:
   </p>
-  <div class="feature-img-wrapper">
-    <img
-      class="feature-img"
-      data-src="create-file-commands.png"
-      alt="Screenshot of Command Palette"
-    />
-    <p class="text-sm text-subtle">Workspace Commands in Command Palette</p>
-  </div>
-  <p>
-    Creating a STBL from the command palette will prompt you for a directory to
-    create it in. The config and sample project will always generate at the root
-    of the current VS Code workspace, since that is where the config must be.
-  </p>
+  <ul>
+    <li>
+      <strong>Create S4TK Config</strong>: Creates a default
+      <code>s4tk.config.json</code> file at your workspace root.
+    </li>
+    <li>
+      <strong>Create Sample S4TK Project</strong>: Generates a sample S4TK
+      project setup (<a href="#/learn/sample-s4tk-project" target="_blank"
+        >read more</a
+      >).
+    </li>
+    <li>
+      <strong>Create String Table (Binary)</strong>: Prompts you for a name and
+      location, and creates a binary STBL.
+    </li>
+    <li>
+      <strong>Create String Table (JSON)</strong>: Prompts you for a name and
+      location, and creates a STBL JSON.
+    </li>
+  </ul>
   <p>
     These commands are <strong>non-destructive</strong>, meaning they will not
     overwrite files that already exist. Attempting to create a STBL that exists
@@ -40,30 +40,28 @@
 
 <div class="paragraphs">
   <h2>Context Menus</h2>
+
   <p>
-    You can generate the config or sample workspace by right-clicking the root
-    workspace folder and selecting the commands in the context menu. For
-    screenshots and more information, visit
-    <a href="/#/learn/s4tk-config">S4TK Config</a> and
-    <a href="#/learn/sample-s4tk-project">Sample S4TK Project</a>.
+    Right-click any folder within your workspace to bring up a context menu,
+    where you'll see the following commands:
   </p>
-  <p>
-    You can also create a JSON string table with a context menu command, but
-    only when there is an S4TK config file loaded. Right-click on any folder
-    within your workspace in order to create a string table JSON.
-  </p>
-  <div class="feature-img-wrapper">
-    <img
-      class="feature-img"
-      data-src="stbl-json-context-menu.png"
-      alt="Screenshot of Context Menu on a Folder"
-    />
-    <p class="text-sm text-subtle">
-      Context Menu Showing Option to Create STBL JSON
+  <ul>
+    <li>
+      <strong>Create S4TK Config</strong>: Creates a default
+      <code>s4tk.config.json</code> file in the folder.
+    </li>
+    <p class="footnote">
+      Only visible if there is no config already loaded. For more info, read
+      <a href="/#/learn/s4tk-config">S4TK Config</a>.
     </p>
-  </div>
+    <li>
+      <strong>Create String Table (JSON)</strong>: Prompts you for a name, and
+      saves the STBL JSON to the folder.
+    </li>
+  </ul>
   <p>
-    The command to create a binary string table is intentionally excluded, as
-    it's not recommended to use them in the first place.
+    Note that the sample workspace and binary STBL commands are intentionally
+    excluded from the context menus, so as to reduce clutter, since they should
+    rarely be used.
   </p>
 </div>
