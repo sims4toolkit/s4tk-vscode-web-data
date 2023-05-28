@@ -42,7 +42,7 @@
         {
           "endpoint": "editor-stbl-json",
           "title": "String Table (JSON)",
-          "updated": "2023-05-27"
+          "updated": "2023-05-28"
         },
         {
           "endpoint": "editor-xml",
