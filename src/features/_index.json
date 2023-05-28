@@ -42,17 +42,12 @@
         {
           "endpoint": "editor-stbl-json",
           "title": "String Table (JSON)",
-          "updated": "2023-05-??"
-        },
-        {
-          "endpoint": "editor-s4tk-config",
-          "title": "S4TK Config",
-          "updated": "2023-05-??"
+          "updated": "2023-05-27"
         },
         {
           "endpoint": "editor-xml",
           "title": "Tuning & SimData",
-          "updated": "2023-05-??"
+          "updated": "2023-05-28"
         }
       ]
     },
@@ -60,14 +55,24 @@
       "title": "Other Commands",
       "pages": [
         {
+          "endpoint": "commands-create-files",
+          "title": "Create File Commands",
+          "updated": "2023-05-26"
+        },
+        {
           "endpoint": "commands-hashing",
           "title": "Hashing Commands",
           "updated": "2023-05-25"
         },
         {
-          "endpoint": "commands-create-files",
-          "title": "Create File Commands",
-          "updated": "2023-05-26"
+          "endpoint": "commands-stbl",
+          "title": "String Table Commands",
+          "updated": "2023-05-28"
+        },
+        {
+          "endpoint": "commands-tuning",
+          "title": "Tuning Commands",
+          "updated": "2023-05-28"
         }
       ]
     }

@@ -1,15 +1,23 @@
-<p>
-  The S4TK extension adds functionality on XML files for formatting, resource
-  keys, and copying references.
-</p>
-
-<hr />
-
 <div class="paragraphs">
   <h2>CodeLenses</h2>
   <p>
     Tuning and SimData both contain the same CodeLenses at the top of the file:
   </p>
+  <ul>
+    <li><strong>Format</strong>: Formats the XML document.</li>
+    <p class="footnote">
+      Uses the number of spaces set in your
+      <a href="#/learn/s4tk-settings" target="_blank">VS Code settings</a>.
+    </p>
+
+    <li><strong>Type</strong>: Displays inferred type, click to override.</li>
+
+    <li><strong>Group</strong>: Displays inferred group, click to override.</li>
+
+    <li>
+      <strong>Instance</strong>: Displays inferred instance, click to override.
+    </li>
+  </ul>
   <div class="feature-img-wrapper">
     <img
       class="feature-img"
@@ -22,21 +30,14 @@
   </div>
 
   <p>
-    You can format your XML by clicking "Format". It will use the number of
-    spaces set in your
-    <a href="#/learn/s4tk-settings" target="_blank">VS Code settings</a>.
-  </p>
-
-  <p>
-    Additionally, S4TK automatically infers resource keys for tuning and
-    SimData, and will display them in the three other CodeLenses as hex numbers.
-    If you need to override one and set it manually, then just click the
-    CodeLens and a comment will be inserted. For more information, read
+    Clicking one of the Type, Group, or Instance CodeLenses will insert a
+    comment at the top of the file that tells S4TK which value to use instead of
+    the inferred one. For more information, read
     <a href="#/features/resource-keys">Resource Keys</a>.
   </p>
   <p class="footnote">
-    If one of the resource key values says "Unknown", S4TK could not infer it,
-    and it must be manually set.
+    If one of values says "Unknown", it could not be inferred, and must be
+    overridden.
   </p>
 </div>
 
@@ -45,23 +46,7 @@
 <div class="paragraphs">
   <h2>Commands</h2>
   <p>
-    There is only one command available on XML files, and it applies to Tuning
-    only, not SimData. Right-click on the tuning file in either the file
-    explorer or editor tabs, and you will see the following option:
-  </p>
-  <div class="feature-img-wrapper">
-    <img
-      class="feature-img"
-      data-src="TODO.png"
-      alt="Screenshot of Tuning File Context Menu"
-    />
-    <p class="text-sm text-subtle">
-      "Copy as XML Reference" Command in the Context Menu
-    </p>
-  </div>
-  <p>
-    This will copy the tuning file as an XML reference, such as
-    <code>12345&lt;!--filename--&gt;</code>, so you can paste it into another
-    tuning file.
+    Tuning files also have commands. Please read
+    <a href="#/features/commands-tuning">Tuning Commands</a> for reference.
   </p>
 </div>
