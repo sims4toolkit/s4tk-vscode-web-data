@@ -180,3 +180,37 @@
     <p class="footnote">List of glob patterns relative to the project root.</p>
   </ul>
 </div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>String Table Settings</h2>
+  <p>
+    The <code>stringTableSettings</code> section includes options for strings:
+  </p>
+  <ul>
+    <li><code>defaultStringTable</code>: Path to the default string table.</li>
+    <p class="footnote">
+      The default string table is the one that strings are added to via
+      <a href="#/features/commands-stbl">commands</a>.
+    </p>
+
+    <li>
+      <code>generateMissingLocales</code>: Whether or not to generate missing
+      strings for other locales.
+    </li>
+    <p class="footnote">
+      This will create STBLs for each missing locale, and/or fill in invidual
+      strings that are missing within them (from the default locale).
+    </p>
+
+    <li>
+      <code>mergeStringTablesInSamePackage</code>: Make it so there is only one
+      string table per built package.
+    </li>
+    <p class="footnote">
+      If more than one string table is being written to one package, they are
+      merged. The ID of the first is used.
+    </p>
+  </ul>
+</div>
