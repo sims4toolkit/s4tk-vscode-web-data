@@ -7,7 +7,7 @@
         {
           "endpoint": "intro-to-vscode",
           "title": "Intro to VS Code",
-          "updated": "2023-05-19"
+          "updated": "2023-05-29"
         },
         {
           "endpoint": "s4s-vs-vscode",
@@ -22,7 +22,7 @@
         {
           "endpoint": "intro-to-s4tk-extension",
           "title": "Intro to the S4TK Extension",
-          "updated": "2023-05-19"
+          "updated": "2023-05-29"
         },
         {
           "endpoint": "sample-s4tk-project",
