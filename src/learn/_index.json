@@ -22,7 +22,7 @@
         {
           "endpoint": "intro-to-s4tk-extension",
           "title": "Intro to the S4TK Extension",
-          "updated": "2023-05-29"
+          "updated": "2023-07-02"
         },
         {
           "endpoint": "sample-s4tk-project",
@@ -32,7 +32,7 @@
         {
           "endpoint": "s4tk-config",
           "title": "S4TK Config File",
-          "updated": "2023-05-21"
+          "updated": "2023-07-02"
         },
         {
           "endpoint": "s4tk-settings",

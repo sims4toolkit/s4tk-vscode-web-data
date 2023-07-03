@@ -29,8 +29,8 @@
     </p>
 
     <li>
-      <strong>Release</strong>: Run a normal built, but write all packages and
-      other files into a ZIP.
+      <strong>Release</strong>: Run a normal build, but write packages and/or
+      other files into ZIPs.
     </li>
     <p class="footnote">
       Useful for bundling your package(s) with your scripts, READMEs, etc.
@@ -49,6 +49,7 @@
 
 <div class="paragraphs">
   <h2>Build Instructions</h2>
+
   <p>
     The <code>buildInstructions</code> section specifies which files to build to
     which packages:
@@ -79,6 +80,51 @@
       <code>source</code> folder.
     </p>
   </ul>
+
+  <p>
+    The <code>buildInstructions.packages</code> list contains objects with the
+    following properties:
+  </p>
+  <ul>
+    <li><code>filename</code>: Name of the package file to create.</li>
+    <p class="footnote">
+      If the name does not end in <code>.package</code>, it will automatically
+      be appended.
+    </p>
+
+    <li><code>include</code>: List of glob patterns to include.</li>
+    <p class="footnote">Patterns are relative to the source folder.</p>
+
+    <li>
+      <code>exclude</code>: List of glob patterns to exclude, even if they match
+      an include pattern.
+    </li>
+    <p class="footnote">Patterns are relative to the source folder.</p>
+
+    <li>
+      <code>duplicateFilesFrom</code>: List of packages to base this one on. All
+      packages must have been generated before this one.
+    </li>
+    <p class="footnote">Useful for creating different "flavors" of one mod.</p>
+
+    <li>
+      <code>doNotGenerate</code>: If true, then neither generate nor write this
+      package to disk.
+    </li>
+    <p class="footnote">
+      Useful for "commenting out" a package without messing up glob validation.
+    </p>
+
+    <li>
+      <code>doNotWrite</code>: If true, then do not write this package to disk
+      even if it is generated.
+    </li>
+    <p class="footnote">
+      Useful for not writing a package that still needs to be generated because
+      another package depends on it.
+    </p>
+  </ul>
+
   <p>
     For more information about globbing, check out the
     <a href="#/learn/glob-patterns" target="_blank">Glob Patterns</a> article.
@@ -131,6 +177,15 @@
     </p>
 
     <li>
+      <code>allowResourceKeyOverrides</code>: Whether or not multiple files in
+      the same package are allowed to have the same key.
+    </li>
+    <p class="footnote">
+      Making this <code>true</code> means some of your source files might be
+      overriding each other.
+    </p>
+
+    <li>
       <code>outputBuildSummary</code>: What kind build summary to generate
       (<code>"none"</code>, <code>"partial"</code>, or <code>"full"</code>).
     </li>
@@ -153,9 +208,29 @@
 
 <div class="paragraphs">
   <h2>Release Settings</h2>
+
   <p>
     The <code>releaseSettings</code> section specifies your ZIPs made for
     release:
+  </p>
+  <ul>
+    <li>
+      <code>overrideDestinations</code>: The folder(s) to write your ZIPs to, if
+      different from your build instruction's destinations.
+    </li>
+    <p class="footnote">
+      Paths can either be absolute or relative to the root folder.
+    </p>
+
+    <li><code>zips</code>: List of information about the ZIPs to create.</li>
+    <p class="footnote">
+      This property is required, but is allowed to be empty.
+    </p>
+  </ul>
+
+  <p>
+    The <code>releaseSettings.zips</code> list contains information about each
+    ZIP:
   </p>
   <ul>
     <li><code>filename</code>: The name of the generated ZIP file.</li>
@@ -163,6 +238,9 @@
       If the name does not end in <code>.zip</code>, it will automatically be
       appended.
     </p>
+
+    <li><code>packages</code>: List of packages to include in this ZIP.</li>
+    <p class="footnote">Must include packages that are being generated.</p>
 
     <li>
       <code>internalFolder</code>: What to name the folder within the ZIP, if
@@ -177,7 +255,18 @@
       <code>otherFiles</code>: List of other files to include in the ZIP, such
       as scripts or READMEs.
     </li>
-    <p class="footnote">List of glob patterns relative to the project root.</p>
+    <p class="footnote">
+      List of glob patterns relative to the project root.
+      <span class="macos text-subtle"
+        >Hidden macOS files are automatically excluded.</span
+      >
+    </p>
+
+    <li>
+      <code>doNotGenerate</code>: If true, then neither generate nor write this
+      ZIP.
+    </li>
+    <p class="footnote">Useful for "commenting out" a ZIP.</p>
   </ul>
 </div>
 
@@ -189,6 +278,15 @@
     The <code>stringTableSettings</code> section includes options for strings:
   </p>
   <ul>
+    <li>
+      <code>allowStringKeyOverrides</code>: Whether or not multiple strings in
+      the same package are allowed to have the same key.
+    </li>
+    <p class="footnote">
+      Making this <code>true</code> means some of your strings might be
+      overriding each other.
+    </p>
+
     <li><code>defaultStringTable</code>: Path to the default string table.</li>
     <p class="footnote">
       The default string table is the one that strings are added to via
@@ -211,6 +309,26 @@
     <p class="footnote">
       If more than one string table is being written to one package, they are
       merged. The ID of the first is used.
+    </p>
+  </ul>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Workspace Settings</h2>
+  <p>
+    The <code>workspaceSettings</code> section includes options that do not
+    affect the build script:
+  </p>
+  <ul>
+    <li>
+      <code>overrideIndexRoot</code>: The root to use for the index, if
+      different from the source folder in your build instructions.
+    </li>
+    <p class="footnote">
+      You likely have no use for this unless your project is complex and has
+      multiple packages with files that override each other.
     </p>
   </ul>
 </div>

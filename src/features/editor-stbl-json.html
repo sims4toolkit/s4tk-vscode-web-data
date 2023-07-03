@@ -103,3 +103,25 @@
     this in <a href="#/learn/s4tk-settings" target="_blank">S4TK Settings</a>.
   </p>
 </div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>String Table Fragments</h2>
+
+  <p>
+    To mark a string table JSON as a fragment, set its
+    <code>"fragment"</code> property to <code>true</code>. Being a fragment
+    means that a string table's entries will either overwrite or be appended to
+    another string table. The string table that it is a fragment of is
+    determined by them having matching resource keys. The base string table
+    should NOT be a fragment.
+  </p>
+  <p>
+    Fragments are intended for use with the
+    <code>duplicateFilesFrom</code> option in
+    <code>buildInstructions.packages</code>; they can be used to add or
+    overwrite individual strings without needing to overwrite the entire base
+    string table.
+  </p>
+</div>

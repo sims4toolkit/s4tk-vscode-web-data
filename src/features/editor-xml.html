@@ -1,6 +1,6 @@
 <p>
-  Tuning and SimData are both edited as plain text XML files in S4TK, but they
-  have CodeLenses and commands.
+  Tuning and SimData are both edited as plain XML in S4TK, but they have
+  CodeLenses, commands, and some intellisense.
 </p>
 
 <hr />
@@ -56,4 +56,61 @@
     Tuning files also have commands. Please read
     <a href="#/features/commands-tuning">Tuning Commands</a> for reference.
   </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Intellisense</h2>
+
+  <h4 class="mt-4">Warnings &amp; Errors</h4>
+  <p>
+    Tuning and SimData are both validated as you type, and can display warnings
+    and errors related to their meta data and overall structure. Warnings are
+    things that either don't seem right or may cause issues in-game, while
+    errors are things that are guaranteed to cause your build script to fail if
+    not fixed.
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="xml-warning.png"
+      alt="Screenshot of Sample Warning in Tuning"
+    />
+    <p class="text-sm text-subtle">Warning About Tuning ID Being Too Large</p>
+  </div>
+
+  <h4 class="mt-4">Jump-to-Definition</h4>
+  <p>
+    Hold
+    <mark class="keystroke"
+      ><span class="macos">⌘ CMD</span><span class="windows">CTRL</span></mark
+    >
+    and hover over a decimal tuning ID within any XML file to view the
+    definition line of the associated tuning, and if you click, you will be
+    brought to its file. This only works for files within the current workspace.
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="xml-jump-to-definition.png"
+      alt="Screenshot of Cursor Hovering a Tuning ID"
+    />
+    <p class="text-sm text-subtle">Clickable Tuning ID With Definition Info</p>
+  </div>
+
+  <h4 class="mt-4">Class TDESC Links</h4>
+  <p>
+    Hover over the class name in any tuning file to see a link to its
+    <a href="https://tdesc.lot51.cc/" target="_blank">online TDESC</a>, click
+    the link to launch the page in your browser.
+  </p>
+  <div class="feature-img-wrapper">
+    <img
+      class="feature-img"
+      data-src="xml-tdesc-link.png"
+      alt="Screenshot of Cursor Hovering Over Tuning Class"
+    />
+    <p class="text-sm text-subtle">TDESC Link Being Shown on Tuning Class</p>
+  </div>
 </div>
