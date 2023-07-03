@@ -1,0 +1,77 @@
+<p>
+  S4TK has always been intended for making gameplay mods, so it only supports
+  tuning, SimData, and string tables as first-class citizens. However, all other
+  Sims 4 resources can be built as well via packages or TGI file names.
+</p>
+<p class="footnote">
+  "TGI file names" refers to file names that contain the type, group, and
+  instance, such as <code>12345678_00000000_0123456789ABCDEF.binary</code>
+</p>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Tuning &amp; SimData</h2>
+  <p>
+    All loose tuning files must have an <code>.xml</code> extension, and their
+    SimDatas must be in the same folder and have the same name, but with a
+    <code>.SimData.xml</code> extension. If using these extensions, they must be
+    plain-text (i.e., no binary SimDatas).
+  </p>
+  <p class="footnote">
+    You are allowed to use TGI file names for tuning and SimData, but it is
+    highly advised against as it will cause issues with intellisense.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>String Tables</h2>
+  <p>
+    String tables can be
+    <a href="#/features/editor-stbl-binary">binary</a> or
+    <a href="#/features/editor-stbl-json">JSON</a>, but JSON is highly
+    recommended. JSON string tables must use the
+    <code>.stbl.json</code> extension, and binary string tables must have TGI
+    file names.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>Deleted Records</h2>
+  <p>
+    Deleted records are resources with a flag that tells the game to treat them
+    like they don't exist. You can use deleted records to delete vanilla files,
+    or to deactivate files in your own mod via an add-on.
+  </p>
+  <p>
+    Deleted records must use a TGI file name with the extension
+    <code>.deleted</code>. For instance, if you want to delete a file with the
+    key 12345678-00000000-0123456789ABCDEF, you can use a file named
+    <code>12345678_00000000_0123456789ABCDEF.deleted</code>.
+  </p>
+  <p>
+    <strong class="danger">Warning:</strong> It is generally not a good idea to
+    use deleted records. S4TK only supports them because there is no other tool
+    that exists for them, and I wanted to provide people with a way to do it if
+    they want to.
+  </p>
+  <p class="footnote">
+    S4S does not render deleted records, so you can only see them with the
+    package renderer in VS Code or the online S4TK package viewer.
+  </p>
+</div>
+
+<hr />
+
+<div class="paragraphs">
+  <h2>All Other Resources</h2>
+  <p>
+    All other resources, such as DDS images, object definitions, and ASMs must
+    either be kept in packages or written as binary files using TGI file names.
+    Packages are recommended, since you can edit them with S4S as needed.
+  </p>
+</div>

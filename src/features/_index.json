@@ -7,12 +7,12 @@
         {
           "endpoint": "build-config",
           "title": "Build Customization",
-          "updated": "2023-05-29"
+          "updated": "2023-07-02"
         },
         {
           "endpoint": "build-validation",
           "title": "Build Validation",
-          "updated": "2023-05-24"
+          "updated": "2023-07-02"
         },
         {
           "endpoint": "resource-keys",
@@ -23,6 +23,11 @@
           "endpoint": "running-builds",
           "title": "Running Builds",
           "updated": "2023-05-25"
+        },
+        {
+          "endpoint": "supported-files",
+          "title": "Supported Files",
+          "updated": "2023-07-02"
         }
       ]
     },
@@ -42,12 +47,12 @@
         {
           "endpoint": "editor-stbl-json",
           "title": "String Table (JSON)",
-          "updated": "2023-05-28"
+          "updated": "2023-07-02"
         },
         {
           "endpoint": "editor-xml",
           "title": "Tuning & SimData",
-          "updated": "2023-05-28"
+          "updated": "2023-07-02"
         }
       ]
     },
@@ -57,7 +62,7 @@
         {
           "endpoint": "commands-create-files",
           "title": "Create File Commands",
-          "updated": "2023-05-28"
+          "updated": "2023-07-02"
         },
         {
           "endpoint": "commands-hashing",
@@ -67,12 +72,17 @@
         {
           "endpoint": "commands-stbl",
           "title": "String Table Commands",
-          "updated": "2023-05-28"
+          "updated": "2023-07-02"
         },
         {
           "endpoint": "commands-tuning",
           "title": "Tuning Commands",
-          "updated": "2023-05-28"
+          "updated": "2023-07-02"
+        },
+        {
+          "endpoint": "commands-workspace",
+          "title": "Workspace Commands",
+          "updated": "2023-07-02"
         }
       ]
     }

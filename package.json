@@ -2,12 +2,15 @@
   "name": "s4tk-vscode-web-data",
   "description": "The data for https://vscode.sims4toolkit.com.",
   "author": "frankkulak",
+  "main": "./scripts/build.cjs",
   "scripts": {
-    "build": "node scripts/build.cjs",
-    "clean": "rm -r build/*"
+    "build": "node .",
+    "clean": "rm -rf ./build/**",
+    "dev": "nodemon --watch src -e json,html,png ."
   },
   "devDependencies": {
     "glob": "^10.2.4",
-    "html-minifier": "^4.0.0"
+    "html-minifier": "^4.0.0",
+    "nodemon": "^2.0.22"
   }
 }

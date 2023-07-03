@@ -42,9 +42,10 @@
 
   <p>If building in release mode, it also verifies that:</p>
   <ul>
-    <li>The ZIP has a non-empty <code>filename</code></li>
+    <li>Every ZIP has a non-empty <code>filename</code></li>
+    <li>Every ZIP's required packages are being generated</li>
     <li>
-      The ZIP's <code>otherFiles</code> has at least one match if the
+      Every ZIP's <code>otherFiles</code> has at least one match if the
       <code>include</code> list is non-empty
     </li>
   </ul>
@@ -65,6 +66,15 @@
     <li>
       It has a resource key specified by file name, comments, or inference
     </li>
+    <li>Each resource within the same package has a unique key</li>
+    <p class="footnote">
+      Does not apply if <code>allowResourceKeyOverrides</code> is true
+    </p>
+
+    <li>Each string within the same package has a unique key</li>
+    <p class="footnote">
+      Does not apply if <code>allowStringKeyOverrides</code> is true
+    </p>
   </ul>
 </div>
 
