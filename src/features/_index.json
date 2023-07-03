@@ -23,6 +23,11 @@
           "endpoint": "running-builds",
           "title": "Running Builds",
           "updated": "2023-05-25"
+        },
+        {
+          "endpoint": "supported-files",
+          "title": "Supported Files",
+          "updated": "2023-07-02"
         }
       ]
     },
