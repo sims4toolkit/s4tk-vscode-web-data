@@ -5,6 +5,11 @@
       "title": "Updates",
       "pages": [
         {
+          "endpoint": "0-2-2",
+          "title": "v0.2.2",
+          "updated": "2024-03-10"
+        },
+        {
           "endpoint": "0-2-1",
           "title": "v0.2.1",
           "updated": "2024-02-06"
